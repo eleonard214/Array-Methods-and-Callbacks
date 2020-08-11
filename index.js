@@ -82,12 +82,14 @@ let winningString = winners.forEach((item, index) =>{
 /* Task 6: Write a function called `getAverageGoals` that accepts a parameter `data` and returns the the average number of home team goals and away team goals scored per match (Hint: use .reduce and do this in 2 steps) */
 
 function getAverageGoals(data) {
-let averageHomeGoals = Math.round(data.reduce((acc, index) => { return acc + index ["Home Team Gaols"] / data.length }, 0))
-let averageAwayGoals = Math.round(data.reduce((acc, index) => { return acc + index ["Away Team Gaols"] / data.length }, 0))
-  return averageHomeGoals
-};
+    let avghomegoals = data.reduce((acc, index) => { return acc + index["Home Team Goals"]
+    / data.length }, 0)
+    let avgawaygoals = data.reduce((acc, index) => { return acc + index["Away Team Goals"]
+    / data.length }, 0) 
+    return {home: avghomegoals, away: avgawaygoals}
+}
 
-console.log(getAverageGoals(fifaData));
+console.log(getAverageGoals(fifaData))
 
 /// STRETCH 🥅 //
 
